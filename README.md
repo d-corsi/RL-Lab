@@ -27,6 +27,7 @@ Python virtual environments users (venv) can avoid the Miniconda installation. T
   - keras
   - scipy
   - matplotlib
+  - gym
 
 ## Assignements
 Following the link to the code snippets for the lessons:

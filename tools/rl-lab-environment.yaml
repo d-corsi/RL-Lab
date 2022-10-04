@@ -12,3 +12,4 @@ dependencies:
   - keras
   - scipy
   - matplotlib
+  - gym
