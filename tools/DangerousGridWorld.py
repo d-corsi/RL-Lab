@@ -5,6 +5,8 @@ class GridWorld( gym.Env ):
 
 	def __init__( self ):
 
+		#numpy.random.seed(1)
+
 		#
 		self.map_size = 7
 		self.action_space = 4
@@ -37,22 +39,22 @@ class GridWorld( gym.Env ):
 
 			# Check Left
 			new_state = self.pos_to_state(x-1, y)
-			if new_state == None or new_state in self.walls: self.available_action[state][0] = None
+			if new_state == None or new_state in self.walls: self.available_action[state][0] = state
 			else: self.available_action[state][0] = self.pos_to_state(x-1, y)
 
 			# Check Right
 			new_state = self.pos_to_state(x+1, y)
-			if new_state == None or new_state in self.walls: self.available_action[state][1] = None
+			if new_state == None or new_state in self.walls: self.available_action[state][1] = state
 			else: self.available_action[state][1] = self.pos_to_state(x+1, y)
 
 			# Check Up
 			new_state = self.pos_to_state(x, y-1)
-			if new_state == None or new_state in self.walls: self.available_action[state][2] = None
+			if new_state == None or new_state in self.walls: self.available_action[state][2] = state
 			else: self.available_action[state][2] = self.pos_to_state(x, y-1)
 			
 			# Check Down
 			new_state = self.pos_to_state(x, y+1)
-			if new_state == None or new_state in self.walls: self.available_action[state][3] = None
+			if new_state == None or new_state in self.walls: self.available_action[state][3] = state
 			else: self.available_action[state][3] = self.pos_to_state(x, y+1)
 
 			
@@ -61,6 +63,18 @@ class GridWorld( gym.Env ):
 		transition_table = [ 0 for _ in range(self.state_number) ]
 		possible_actions = sum( [1 if el != None else 0 for el in self.available_action[state]] )
 		residual_probability = 1
+
+
+		transition_table[self.available_action[state][action]] = self.probability
+		residual_probability -= self.probability
+		possible_actions -= 1
+		residual_probability = round(residual_probability / possible_actions, 2)
+
+		for idx, possible_state in enumerate(self.available_action[state]):
+			if idx != action: 
+				transition_table[possible_state] += residual_probability
+			
+		return transition_table
 
 		if self.available_action[state][action] != None: 
 			transition_table[self.available_action[state][action]] = self.probability
@@ -80,28 +94,13 @@ class GridWorld( gym.Env ):
 		# 
 		if state in self.walls: return 0
 
-		"""
-		transition_table = [ 0 for _ in range(self.state_number) ]
-		possible_actions = sum( [1 if el != None else 0 for el in self.available_action[state]] )
-		residual_probability = 1
-
-		if self.available_action[state][action] != None: 
-			transition_table[self.available_action[state][action]] = 0.9
-			residual_probability -= 0.9
-			possible_actions -= 1
-
-		residual_probability = round(residual_probability / possible_actions, 2)
-		for possible_state in self.available_action[state]:
-			if possible_state not in [None, self.available_action[state][action]]:
-				transition_table[possible_state] = residual_probability
-		"""
-
 		transition_table = self.get_full_transition_table( state, action )
 
 		return transition_table[next_state]
 
 
 	def sample( self, action, state=None ):
+
 		if state == None: state = self.robot_state
 		transition_table = self.get_full_transition_table( state, action )
 
@@ -110,6 +109,7 @@ class GridWorld( gym.Env ):
 			transition_table[ transition_table.index( max(transition_table) )] += r
 
 		next_state = numpy.random.choice(numpy.arange(0, self.state_number), p=transition_table)
+
 		return next_state
 
 
@@ -158,7 +158,7 @@ class GridWorld( gym.Env ):
 			max_candidate = -numpy.inf
 			max_action = 0
 			for idx, a in enumerate(self.available_action[state]):
-				if a != None and a > max_candidate: 
+				if a != state and a > max_candidate: 
 					max_candidate = a
 					max_action = idx
 
@@ -198,3 +198,37 @@ class GridWorld( gym.Env ):
 	def pos_to_state(self, y, x):
 		if x not in range(0, self.map_size) or y not in range(0, self.map_size): return None
 		return x * self.map_size + y
+
+
+	def random_initial_state( self ):
+
+		state = numpy.random.randint(0, 48)
+		if state not in self.walls and state not in self.death: return state
+		return self.random_initial_state()
+
+
+	def sample_episode( self, policy, max_length=25 ):
+
+		episode = []
+
+		robot_state = self.random_initial_state()
+
+		while True:
+			max_length -= 1
+
+			action_probabilities = policy[robot_state]
+
+			if sum(action_probabilities) != 1:
+				r = 1 - sum(action_probabilities)
+				action_probabilities[ action_probabilities.index( max(action_probabilities) )] += r
+
+			action = numpy.random.choice( numpy.arange(0, self.action_space), p=action_probabilities)
+			new_state = self.sample( action, robot_state )
+			reward = self.R[new_state]		
+
+			episode.append([robot_state, action, reward])
+			robot_state = new_state
+
+			if self.is_terminal(robot_state) or max_length < 0: break
+
+		return episode

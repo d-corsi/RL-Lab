@@ -34,7 +34,7 @@ Following the link to the code snippets for the lessons:
 
 **First Semester**
 - [x] Lesson 1: Value/Policy Iteration [Code!](lessons/lesson_1_code.py) [Results!](lessons/lesson_1_results.txt)
-- [ ] Lesson 2:  *Coming Soon...*
+- [ ] Lesson 2: Monte Carlo Methods [Code!](lessons/lesson_2_code.py) [Results!](lessons/lesson_2_results.txt)
 - [ ] Lesson 3:  *Coming Soon...*
 - [ ] Lesson 4:  *Coming Soon...*
 - [ ] Lesson 5:  *Coming Soon...*
@@ -51,8 +51,7 @@ Following the link to the code snippets for the lessons:
 ## Tutorials
 This repo includes a set of introductory tutorials to help with the accomplishment of the exercizes. In details, we provide the following jupyter notebook that contains the basic instructions for the lab:
 - **Tutorial 1 - Environment:** [Here!](tutorials/tutorial_environment.ipynb)
-- **Tutorial 2 - Queue:** *Coming Soon...*
-- **Tutorial 3 - Neural Network and Keras:** *Coming Soon...*
+- **Tutorial 2 - Neural Network and Keras:** *Coming Soon...*
 
 
 ## Authors
