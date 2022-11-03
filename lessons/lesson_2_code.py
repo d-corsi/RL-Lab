@@ -12,7 +12,7 @@ def on_policy_mc( environment, maxiters=5000, eps=0.3, gamma=0.99 ):
 		environment: OpenAI Gym environment
 		maxiters: timeout for the iterations
 		eps: random value for the eps-greedy policy (probability of random action)
-		discount: gamma value, the discount factor for the Bellman equation
+		gamma: gamma value, the discount factor for the Bellman equation
 		
 	Returns:
 		policy: 1-d dimensional array of action identifiers where index `i` corresponds to state id `i`

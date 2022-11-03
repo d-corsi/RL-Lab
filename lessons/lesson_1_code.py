@@ -36,6 +36,7 @@ def policy_iteration(environment, maxiters=300, discount=0.9, maxviter=10):
 		environment: OpenAI Gym environment
 		maxiters: timeout for the iterations
 		discount: gamma value, the discount factor for the Bellman equation
+		maxviter: number of epsiodes for the policy evaluation
 		
 	Returns:
 		policy: 1-d dimensional array of action identifiers where index `i` corresponds to state id `i`
