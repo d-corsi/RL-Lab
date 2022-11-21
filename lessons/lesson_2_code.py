@@ -62,7 +62,7 @@ def policy_iteration(environment, maxiters=300, discount=0.9, maxviter=10):
 
 def main():
 	print( "\n************************************************" )
-	print( "*  Welcome to the first lesson of the RL-Lab!  *" )
+	print( "*  Welcome to the second lesson of the RL-Lab! *" )
 	print( "*    (Policy Iteration and Value Iteration)    *" )
 	print( "************************************************" )
 

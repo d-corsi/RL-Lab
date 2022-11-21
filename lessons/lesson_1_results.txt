@@ -1,5 +1,5 @@
 ************************************************
-*  Welcome to the third lesson of the RL-Lab!  *
+*  Welcome to the first lesson of the RL-Lab!  *
 *             (MDP and Environments)           *
 ************************************************
 

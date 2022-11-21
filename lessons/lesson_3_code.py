@@ -29,7 +29,7 @@ def on_policy_mc( environment, maxiters=5000, eps=0.3, gamma=0.99 ):
 
 def main():
 	print( "\n*************************************************" )
-	print( "*  Welcome to the second lesson of the RL-Lab!  *" )
+	print( "*  Welcome to the third lesson of the RL-Lab!   *" )
 	print( "*           (Monte Carlo Methods)               *" )
 	print( "**************************************************" )
 

@@ -1,7 +1,7 @@
 *************************************************
-*  Welcome to the second lesson of the RL-Lab!  *
+*  Welcome to the third lesson of the RL-Lab!   *
 *           (Monte Carlo Methods)               *
-**************************************************
+*************************************************
 
 Environment Render:
 [S] [ ] [ ] [ ] [ ] [ ] [X]

@@ -1,5 +1,5 @@
 ************************************************
-*  Welcome to the first lesson of the RL-Lab!  *
+*  Welcome to the second lesson of the RL-Lab! *
 *    (Policy Iteration and Value Iteration)    *
 ************************************************
 
