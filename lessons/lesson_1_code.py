@@ -1,83 +1,111 @@
-import os, sys
+import os, sys, numpy
 module_path = os.path.abspath(os.path.join('../tools'))
 if module_path not in sys.path: sys.path.append(module_path)
 from DangerousGridWorld import GridWorld
 
 
-def value_iteration(environment, maxiters=300, discount=0.9, max_error=1e-3):
+def random_dangerous_grid_world( environment ):
 	"""
-	Performs the value iteration algorithm for a specific environment
+	Performs a random trajectory on the given Dangerous Grid World environment 
 	
 	Args:
 		environment: OpenAI Gym environment
-		maxiters: timeout for the iterations
-		discount: gamma value, the discount factor for the Bellman equation
-		max_error: the maximum error allowd in the utility of any state
 		
 	Returns:
-		policy: 1-d dimensional array of action identifiers where index `i` corresponds to state id `i`
+		trajectory: an array containing the sequence of states visited by the agent
 	"""
 	
-	U_1 = [0 for _ in range(environment.observation_space)] # vector of utilities for states S
-	delta = 0 # maximum change in the utility o any state in an iteration
-	U = U_1.copy()
 	#
 	# YOUR CODE HERE!
 	#
-	return environment.values_to_policy( U )
-
+	for step in range(10):
+		#
+		# YOUR CODE HERE!
+		#
+		if False: break # <- Hint: check if the environment is terminal
 	
+	return trajectory
 
-def policy_iteration(environment, maxiters=300, discount=0.9, maxviter=10):
+
+class RecyclingRobot():
 	"""
-	Performs the policy iteration algorithm for a specific environment
-	
-	Args:
-		environment: OpenAI Gym environment
-		maxiters: timeout for the iterations
-		discount: gamma value, the discount factor for the Bellman equation
-		maxviter: number of epsiodes for the policy evaluation
+	Class that implements the environment Recycling Robot of the book: 'Reinforcement
+	Learning: an introduction, Sutton & Barto'. Example 3.3 page 52 (second edition).
 		
-	Returns:
-		policy: 1-d dimensional array of action identifiers where index `i` corresponds to state id `i`
+	Attributes
+	----------
+		observation_space : int
+			define the number of possible actions of the environment
+		action_space: int
+			define the number of possible states of the environment
+		actions: dict
+			a dictionary that translate the 'action code' in human languages
+		states: dict
+			a dictionary that translate the 'state code' in human languages
+		
+	Methods
+	-------
+		reset( self )
+			method that reset the environment to an initial state; returns the state
+		step( self, action )
+			method that perform the action given in input, computes the next state and the reward; returns 
+			next_state and reward
 	"""
-	
-	p = [0 for _ in range(environment.observation_space)] #initial policy    
-	U = [0 for _ in range(environment.observation_space)] #utility array
-	
-	# 1) Policy Evaluation
-	#
-	# YOUR CODE HERE!
-	#
 
-	unchanged = True 	 
-	# 2) Policy Improvement
-	#
-	# YOUR CODE HERE!
-	#    
-	
-	return p
 
+	def __init__( self ):
+
+		# Loading the default parameters
+		self.alfa = 0.7
+		self.beta = 0.7
+		self.r_search = 0.5
+		self.r_wait = 0.2
+
+		# Defining the environment variables
+		self.observation_space = None
+		self.action_space = None
+		self.actions = None
+		self.states = None
+
+
+	def reset( self ):
+		#
+		# YOUR CODE HERE!
+		#
+		return self.state
+
+
+	def step( self, action ):
+
+		reward = 0
+		#
+		# YOUR CODE HERE!
+		#
+		return self.state, reward, False, None
 
 
 def main():
 	print( "\n************************************************" )
 	print( "*  Welcome to the first lesson of the RL-Lab!  *" )
-	print( "*    (Policy Iteration and Value Iteration)    *" )
+	print( "*             (MDP and Environments)           *" )
 	print( "************************************************" )
 
-	print("\nEnvironment Render:")
+	print( "\nA) Random Policy on Dangerous Grid World:" )
 	env = GridWorld()
+	env.render()
+	random_trajectory = random_dangerous_grid_world( env )
+	print( "\nRandom trajectory generated:", random_trajectory )
 
-	print( "\n1) Value Iteration:" )
-	vi_policy = value_iteration( env )
-	env.render_policy( vi_policy )
-	print( "\tExpected reward following this policy:", env.evaluate_policy(vi_policy) )
 
-	print( "\n1) Policy Iteration:" )
-	pi_policy = policy_iteration( env )
-	env.render_policy( pi_policy )
-	print( "\tExpected reward following this policy:", env.evaluate_policy(pi_policy) )
+	print( "\nB) Custom Environment: Recycling Robot" )
+	env = RecyclingRobot()
+	state = env.reset()
+	ep_reward = 0
+	for step in range(10):
+		a = numpy.random.randint( 0, env.action_space )
+		state, r, _, _ = env.step( a )
+		ep_reward += r
+		print( f"\tFrom state '{env.states[state]}' selected action '{env.actions[a]}': \t total reward: {ep_reward:1.1f}" )
 
 
 if __name__ == "__main__":

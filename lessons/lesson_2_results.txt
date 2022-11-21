@@ -1,7 +1,7 @@
-*************************************************
-*  Welcome to the second lesson of the RL-Lab!  *
-*           (Monte Carlo Methods)               *
-**************************************************
+************************************************
+*  Welcome to the first lesson of the RL-Lab!  *
+*    (Policy Iteration and Value Iteration)    *
+************************************************
 
 Environment Render:
 [S] [ ] [ ] [ ] [ ] [ ] [X]
@@ -12,12 +12,22 @@ Environment Render:
 [ ] [W] [W] [W] [X] [ ] [X]
 [ ] [ ] [ ] [ ] [ ] [ ] [G]
 
-3) MC On-Policy
- D   L   L   R   R   D  [X]
+1) Value Iteration:
+ D   R   R   R   D   D  [X]
  D  [W] [W] [W] [X]  D  [X]
  R   D  [W] [W] [X]  D  [X]
 [W]  D  [W] [W] [X]  D  [X]
  D   L  [W] [W] [X]  D  [X]
  D  [W] [W] [W] [X]  D  [X]
  R   R   R   R   R   R  [G]
-        Expected reward following this policy: 3.26
+        Expected reward following this policy: 3.05
+
+2) Policy Iteration:
+ D   R   R   R   R   D  [X]
+ D  [W] [W] [W] [X]  D  [X]
+ R   D  [W] [W] [X]  D  [X]
+[W]  D  [W] [W] [X]  D  [X]
+ D   L  [W] [W] [X]  D  [X]
+ D  [W] [W] [W] [X]  D  [X]
+ R   R   R   R   R   R  [G]
+        Expected reward following this policy: 2.97
