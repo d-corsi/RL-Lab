@@ -22,7 +22,7 @@ def random_dangerous_grid_world( environment ):
 		#
 		# YOUR CODE HERE!
 		#
-		if False: break # <- Hint: check if the environment is terminal
+		if False: break # <- Hint: check if the state is terminal
 	
 	return trajectory
 
@@ -50,6 +50,8 @@ class RecyclingRobot():
 		step( self, action )
 			method that perform the action given in input, computes the next state and the reward; returns 
 			next_state and reward
+		render( self )
+			method that print the internal state of the environment
 	"""
 
 
@@ -84,6 +86,14 @@ class RecyclingRobot():
 		return self.state, reward, False, None
 
 
+	def render( self ):
+
+		#
+		# YOUR CODE HERE!
+		#
+		return True
+
+
 def main():
 	print( "\n************************************************" )
 	print( "*  Welcome to the first lesson of the RL-Lab!  *" )
@@ -103,9 +113,10 @@ def main():
 	ep_reward = 0
 	for step in range(10):
 		a = numpy.random.randint( 0, env.action_space )
-		state, r, _, _ = env.step( a )
+		new_state, r, _, _ = env.step( a )
 		ep_reward += r
 		print( f"\tFrom state '{env.states[state]}' selected action '{env.actions[a]}': \t total reward: {ep_reward:1.1f}" )
+		state = new_state
 
 
 if __name__ == "__main__":

@@ -8,6 +8,11 @@ __pycache__/
 
 # Exercises Solutions
 solutions/
+lessons/lesson_2_code.py
+lessons/lesson_2_results.py
+lessons/lesson_3_code.py
+lessons/lesson_3_results.py
+
 
 # Slides Materials
 materials/
