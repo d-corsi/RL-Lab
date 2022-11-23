@@ -1,0 +1,23 @@
+*************************************************
+*  Welcome to the third lesson of the RL-Lab!   *
+*           (Monte Carlo Methods)               *
+*************************************************
+
+Environment Render:
+[S] [ ] [ ] [ ] [ ] [ ] [X]
+[ ] [W] [W] [W] [X] [ ] [X]
+[ ] [ ] [W] [W] [X] [ ] [X]
+[W] [ ] [W] [W] [X] [ ] [X]
+[ ] [ ] [W] [W] [X] [ ] [X]
+[ ] [W] [W] [W] [X] [ ] [X]
+[ ] [ ] [ ] [ ] [ ] [ ] [G]
+
+3) MC On-Policy
+ D   L   L   R   R   D  [X]
+ D  [W] [W] [W] [X]  D  [X]
+ R   D  [W] [W] [X]  D  [X]
+[W]  D  [W] [W] [X]  D  [X]
+ D   L  [W] [W] [X]  D  [X]
+ D  [W] [W] [W] [X]  D  [X]
+ R   R   R   R   R   R  [G]
+        Expected reward following this policy: 3.26
