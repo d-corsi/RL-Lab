@@ -6,7 +6,7 @@ Following the link to the code snippets for the lessons:
 
 **First Semester**
 - [x] Lesson 1: MDP and Gym Environments [Code!](lessons/lesson_1_code.py) [Results!](lessons/lesson_1_results.txt)
-- [ ] Lesson 2: Value/Policy Iteration *Coming Soon...*
+- [ ] Lesson 2: Value/Policy Iteration [Code!](lessons/lesson_2_code.py) [Results!](lessons/lesson_2_results.txt)
 - [ ] Lesson 3: Monte Carlo Methods *Coming Soon...*
 - [ ] Lesson 4:  *Coming Soon...*
 - [ ] Lesson 5:  *Coming Soon...*
