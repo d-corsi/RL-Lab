@@ -68,6 +68,7 @@ def main():
 
 	print("\nEnvironment Render:")
 	env = GridWorld()
+	env.render()
 
 	print( "\n1) Value Iteration:" )
 	vi_policy = value_iteration( env )
