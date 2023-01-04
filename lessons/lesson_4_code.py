@@ -21,6 +21,23 @@ def epsilon_greedy(q, state, epsilon):
 	return q[state].argmax()
 
 
+def epsilon_greedy(q, state, epsilon):
+	"""
+	Epsilon-greedy action selection function
+	
+	Args:
+		q: q table
+		state: agent's current state
+		epsilon: epsilon parameter
+	
+	Returns:
+		action id
+	"""
+	if numpy.random.random() < epsilon:
+		return numpy.random.choice(q.shape[1])
+	return q[state].argmax()
+
+
 def q_learning(environment, episodes, alpha, gamma, expl_func, expl_param):
 	"""
 	Performs the Q-Learning algorithm for a specific environment
