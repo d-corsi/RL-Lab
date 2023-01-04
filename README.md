@@ -8,7 +8,7 @@ Following the link to the code snippets for the lessons:
 - [x] Lesson 1: MDP and Gym Environments [Code!](lessons/lesson_1_code.py) [Results!](results/lesson_1_results.txt)
 - [x] Lesson 2: Value/Policy Iteration [Code!](lessons/lesson_2_code.py) [Results!](results/lesson_2_results.txt)
 - [x] Lesson 3: Monte Carlo Methods [Code!](lessons/lesson_3_code.py) [Results!](results/lesson_3_results.txt)
-- [ ] Lesson 4: Q-Learning and Sarsa *Coming Soon...*
+- [x] Lesson 4: Q-Learning and Sarsa [Code!](lessons/lesson_4_code.py) [Results!](results/lesson_4_results.txt)
 - [ ] Lesson 5:  *Coming Soon...*
 - [ ] Lesson 6:  *Coming Soon...*
 
