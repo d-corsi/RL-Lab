@@ -75,7 +75,7 @@ def main():
 	env.render_policy( vi_policy )
 	print( "\tExpected reward following this policy:", env.evaluate_policy(vi_policy) )
 
-	print( "\n1) Policy Iteration:" )
+	print( "\n2) Policy Iteration:" )
 	pi_policy = policy_iteration( env )
 	env.render_policy( pi_policy )
 	print( "\tExpected reward following this policy:", env.evaluate_policy(pi_policy) )

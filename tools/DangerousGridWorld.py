@@ -3,7 +3,7 @@ import random, numpy
 
 class GridWorld( gym.Env ):
 
-	def __init__( self ):
+	def __init__( self, deterministic=False ):
 
 		#numpy.random.seed(1)
 
@@ -20,6 +20,9 @@ class GridWorld( gym.Env ):
 		self.walls = [8, 9, 16, 21, 23, 30, 36, 37] + [10, 17, 24, 31, 38]
 		self.death = [6, 13, 20, 27, 34, 41] + [11, 18, 25, 32, 39]
 		self.probability = 0.9
+
+		#
+		if deterministic: self.probability = 1
 
 		#
 		self.robot_state = self.start_state

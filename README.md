@@ -9,7 +9,7 @@ Following the link to the code snippets for the lessons:
 - [x] Lesson 2: Value/Policy Iteration [Code!](lessons/lesson_2_code.py) [Results!](results/lesson_2_results.txt)
 - [x] Lesson 3: Monte Carlo Methods [Code!](lessons/lesson_3_code.py) [Results!](results/lesson_3_results.txt)
 - [x] Lesson 4: Q-Learning and Sarsa [Code!](lessons/lesson_4_code.py) [Results!](results/lesson_4_results.txt)
-- [ ] Lesson 5:  *Coming Soon...*
+- [x] Lesson 5: Dyna-Q [Code!](lessons/lesson_5_code.py) [Results!](results/lesson_5_results.txt)
 - [ ] Lesson 6:  *Coming Soon...*
 
 **Second Semester**
