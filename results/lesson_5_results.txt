@@ -13,7 +13,7 @@ Environment Render:
 [ ] [ ] [ ] [ ] [ ] [ ] [G] 
 
 6) Dyna-Q
- R   R   R   R   R   D  [X] 
+ D   L   R   R   R   D  [X] 
  D  [W] [W] [W] [X]  D  [X] 
  R   D  [W] [W] [X]  D  [X] 
 [W]  D  [W] [W] [X]  D  [X] 
@@ -23,4 +23,4 @@ Environment Render:
 
 	Expected reward with n=0 : -10.1
 	Expected reward with n=25: -10.1
-	Expected reward with n=50: 3.8
+	Expected reward with n=50: 3.6

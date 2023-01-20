@@ -22,6 +22,20 @@ def epsilon_greedy(q, state, epsilon):
 
 
 def dynaQ( environment, maxiters=250, n=10, eps=0.3, alfa=0.3, gamma=0.99 ):
+	"""
+	Implements the DynaQ algorithm
+	
+	Args:
+		environment: OpenAI Gym environment
+		maxiters: timeout for the iterations
+		n: steps for the planning phase
+		eps: random value for the eps-greedy policy (probability of random action)
+		alfa: step size for the Q-Table update
+		gamma: gamma value, the discount factor for the Bellman equation
+		
+	Returns:
+		policy: 1-d dimensional array of action identifiers where index `i` corresponds to state id `i`
+	"""	
 
 	Q = numpy.zeros((environment.observation_space, environment.action_space))
 	M = numpy.array([[[None, None] for _ in range(environment.action_space)] for _ in range(environment.observation_space)])
