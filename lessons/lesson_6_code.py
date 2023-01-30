@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 class MultiArmedBandit():
 	"""
-	A class that implements rhe multi-armed testbed environment
+	A class that implements the N-armed testbed environment
 
 	Attributes
 	----------
@@ -23,13 +23,13 @@ class MultiArmedBandit():
 	"""
 
 	def __init__( self, levers ):
+		#
+		# YOUR CODE HERE!
+		#	
 		self.levers = None
 		self.q_star = None
 		self.sampling_variance = None
-		#
-		# YOUR CODE HERE!
-		#		
-
+			
 	def action( self, action ):
 		#
 		# YOUR CODE HERE!
@@ -73,11 +73,11 @@ def main():
 	print( "**************************************************" )
 
 	# Hyperparameters 
-	n_armed = 100
+	n_armed = 10
 	training_steps = 1000
 
 	# Training phase
-	print( f"\n{n_armed}-armed testbed with 5000 training steps" )
+	print( f"\n{n_armed}-armed testbed with {training_steps} training_steps" )
 	bandit = MultiArmedBandit( levers=n_armed )
 	eps_00, q_00 = banditAlgorithm( bandit, eps=0.00, maxiters=training_steps ) 
 	eps_01, q_01 = banditAlgorithm( bandit, eps=0.01, maxiters=training_steps ) 
@@ -92,13 +92,28 @@ def main():
 	print( "\n\tThe real optimal action is: ", bandit.q_star.argmax() )
 	print( f"\tThe optimal actions found are: {q_00.argmax()} (eps=0), {q_01.argmax()} (eps=0.01), and {q_10.argmax()} (eps=0.1)" )
 
+	# Repeat the experiment for 2000 episodes
+	eps_00_average, eps_01_average, eps_10_average = [], [], []
+	for _ in range(500):
+		bandit = MultiArmedBandit( levers=n_armed )
+		eps_00_average.append( banditAlgorithm( bandit, eps=0.00, maxiters=training_steps )[0] )
+		eps_01_average.append( banditAlgorithm( bandit, eps=0.01, maxiters=training_steps )[0] )
+		eps_10_average.append( banditAlgorithm( bandit, eps=0.10, maxiters=training_steps )[0] )
+
+	eps_00_average = np.average(np.array(eps_00_average), axis=0)
+	eps_01_average = np.average(np.array(eps_01_average), axis=0)
+	eps_10_average = np.average(np.array(eps_10_average), axis=0)
+
+
 	# Plot the results
 	print( "\n\tPlotting data..." )
 	t = np.arange(0, training_steps)
 	_, ax = plt.subplots()
-	ax.plot(t, eps_00, label="eps: 0", linewidth=3)
-	ax.plot(t, eps_01, label="eps: 0.01", linewidth=3)
-	ax.plot(t, eps_10, label="eps: 0.1", linewidth=3)
+	ax.plot(t, eps_00_average, label="eps: 0", linewidth=3)
+	ax.plot(t, eps_01_average, label="eps: 0.01", linewidth=3)
+	ax.plot(t, eps_10_average, label="eps: 0.1", linewidth=3)
+	plt.xlabel( "steps", fontsize=16)
+	plt.ylabel( "average reward", fontsize=16)
 	ax.grid()
 	plt.ylim([0, None])
 	plt.legend()
