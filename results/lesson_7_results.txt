@@ -1,0 +1,34 @@
+************************************************
+*  Welcome to the seventh lesson of the RL-Lab!  *
+*        (Tensorflow and Neural Networks)        *
+**************************************************
+
+A) The global minimum of the function: '2x^2 + 2xy + 2y^2 - 6x' is:
+	<x:2.0, y:-1.0> with value -6.0
+
+B) Showing the deep neural network structure:
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense (Dense)               (None, 8)                 16        
+                                                                 
+ dense_1 (Dense)             (None, 8)                 72        
+                                                                 
+ dense_2 (Dense)             (None, 1)                 9         
+                                                                 
+=================================================================
+Total params: 97
+Trainable params: 97
+Non-trainable params: 0
+_________________________________________________________________
+
+C) Collect a dataset from the interaction with the environment
+
+D) Training a DNN to predict the reward of a state:
+Pre Training Reward Prediction: 
+	state 0 => reward: 0.0 
+	state 48 => reward: 17.431854248046875 
+Post Training Reward Prediction: 
+	state 0 => reward: -0.09999983757734299 
+	state 48 => reward: -0.08864039927721024 

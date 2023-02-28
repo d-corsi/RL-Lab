@@ -5,20 +5,22 @@ Official repository for the 2022/2023 Reinforcement Learning Laboratory of the U
 Following the link to the code snippets for the lessons:
 
 **First Semester**
-- [x] Lesson 1: MDP and Gym Environments [Code!](lessons/lesson_1_code.py) [Results!](results/lesson_1_results.txt)
-- [x] Lesson 2: Value/Policy Iteration [Code!](lessons/lesson_2_code.py) [Results!](results/lesson_2_results.txt)
-- [x] Lesson 3: Monte Carlo Methods [Code!](lessons/lesson_3_code.py) [Results!](results/lesson_3_results.txt)
-- [x] Lesson 4: Q-Learning and Sarsa [Code!](lessons/lesson_4_code.py) [Results!](results/lesson_4_results.txt)
-- [x] Lesson 5: Dyna-Q [Code!](lessons/lesson_5_code.py) [Results!](results/lesson_5_results.txt)
-- [x] Lesson 6: Multi-Armed Bandit [Code!](lessons/lesson_6_code.py) [Results!](results/lesson_6_results.txt)
+- [x] Lesson 1: MDP and Gym Environments [Code!](lessons/lesson_1_code.py) [Results!](results/lesson_1_results.txt) [Slides!](slides/slides_lesson_1.pdf)
+- [x] Lesson 2: Value/Policy Iteration [Code!](lessons/lesson_2_code.py) [Results!](results/lesson_2_results.txt) [Slides!](slides/slides_lesson_2.pdf)
+- [x] Lesson 3: Monte Carlo Methods [Code!](lessons/lesson_3_code.py) [Results!](results/lesson_3_results.txt) [Slides!](slides/slides_lesson_3.pdf)
+- [x] Lesson 4: Q-Learning and Sarsa [Code!](lessons/lesson_4_code.py) [Results!](results/lesson_4_results.txt) [Slides!](slides/slides_lesson_4.pdf)
+- [x] Lesson 5: Dyna-Q [Code!](lessons/lesson_5_code.py) [Results!](results/lesson_5_results.txt) [Slides!](slides/slides_lesson_5.pdf)
+- [x] Lesson 6: Multi-Armed Bandit [Code!](lessons/lesson_6_code.py) [Results!](results/lesson_6_results.txt) [Slides!](slides/slides_lesson_6.pdf)
 
 **Second Semester**
-- [x] Lesson 7:  TensorFlow and Neural Networks *Coming Soon...*
-- [x] Lesson 8:  Deep Q-Network *Coming Soon...*
+- [x] Lesson 7:  TensorFlow and Neural Networks [Code!](lessons/lesson_7_code.py) [Results!](results/lesson_7_results.txt) [Slides!](slides/slides_lesson_7.pdf)
+- [ ] Lesson 8:  Deep Q-Network *Coming Soon...*
 - [ ] Lesson 9:  Naive Policy Gradient *Coming Soon...*
 - [ ] Lesson 10: Actor Critic Architecture (A2C) *Coming Soon...*
 - [ ] Lesson 11: Practical Problem *Coming Soon...*
 - [ ] Lesson 12: Final Activity
+
+## Slides
 
 ## Tutorials
 This repo includes a set of introductory tutorials to help accomplish the exercises. In detail, we provide the following Jupyter notebook that contains the basic instructions for the lab:
