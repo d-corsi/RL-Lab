@@ -7,7 +7,7 @@ from tensorflow.keras.layers import Dense
 import gymnasium, collections
 
 # Setting the seeds
-SEED = 3
+SEED = 15
 np.random.seed(SEED); tf.random.set_seed(SEED)
 
 
@@ -52,7 +52,7 @@ def mse( network, dataset_input, target ):
 	return mse
 
 
-def training_loop( env, neural_net, updateRule, eps=1, epochs=100 ):
+def training_loop( env, neural_net, updateRule, eps=1, episodes=100, updates=1 ):
 	"""
 	Main loop of the reinforcement learning algorithm. Execute the actions and interact
 	with the environment to collect the experience for the training.
@@ -71,7 +71,7 @@ def training_loop( env, neural_net, updateRule, eps=1, epochs=100 ):
 	optimizer = None 
 	rewards_list, memory_buffer = [], collections.deque( maxlen=1000 )
 	averaged_rewards = []
-	for ep in range(epochs):
+	for ep in range(episodes):
 
 		#TODO: reset the environment and obtain the initial state
 		state = None 
@@ -138,11 +138,11 @@ def main():
 
 	env = gymnasium.make( "CartPole-v1" )#, render_mode="human" )
 	neural_net = createDNN( 4, 2, nLayer=2, nNodes=32)
-	rewards = training_loop( env, neural_net, DQNUpdate, epochs=_training_steps  )
+	rewards = training_loop( env, neural_net, DQNUpdate, episodes=_training_steps  )
 
 	t = np.arange(0, _training_steps)
 	plt.plot(t, rewards, label="eps: 0", linewidth=3)
-	plt.xlabel( "epoch", fontsize=16)
+	plt.xlabel( "episodes", fontsize=16)
 	plt.ylabel( "reward", fontsize=16)
 	plt.show()
 
