@@ -1,0 +1,6 @@
+*************************************************
+*  Welcome to the ninth lesson of the RL-Lab!   *
+*                 (REINFORCE)                   *
+*************************************************
+
+(* please refer to the slides for the expected results *)

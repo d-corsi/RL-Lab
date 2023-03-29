@@ -15,8 +15,8 @@ Following the link to the code snippets for the lessons:
 **Second Semester**
 - [x] Lesson 7:  TensorFlow and Neural Networks [Code!](lessons/lesson_7_code.py) [Results!](results/lesson_7_results.txt) [Slides!](slides/slides_lesson_7.pdf)
 - [x] Lesson 8:  Deep Q-Network [Code!](lessons/lesson_8_code.py) [Results!](results/lesson_8_results.txt) [Slides!](slides/slides_lesson_8.pdf)
-- [ ] Lesson 9:  Naive Policy Gradient *Coming Soon...*
-- [ ] Lesson 10: Actor Critic Architecture (A2C) *Coming Soon...*
+- [x] Lesson 9:  Naive Policy Gradient [Code!](lessons/lesson_9_code.py) [Results!](results/lesson_9_results.txt) [Slides!](slides/slides_lesson_9.pdf)
+- [x] Lesson 10: Actor Critic Architecture (A2C) [Code!](lessons/lesson_10_code.py) [Results!](results/lesson_10_results.txt) [Slides!](slides/slides_lesson_10.pdf)
 - [ ] Lesson 11: Practical Problem *Coming Soon...*
 - [ ] Lesson 12: Final Activity
 
