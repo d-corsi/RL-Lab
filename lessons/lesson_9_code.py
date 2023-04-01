@@ -70,7 +70,18 @@ def REINFORCE_naive( neural_net, memory_buffer, optimizer ):
 
 	"""
 
-	raise NotImplementedError
+	#TODO: Setup the tape
+		#TODO: Initialize the array for the objectives, one for each episode considered
+		#TODO: Iterate over all the trajectories considered
+			#TODO: Extract the information from the buffer (for the considered episode)
+			#TODO: Compute the log-prob of the current trajectory
+			#TODO: Implement the update rule, notice that the REINFORCE objective 
+			# is the sum of the logprob (i.e., the probability of the trajectory)
+			# multiplied by the sum of the reward
+
+		#TODO: Compute the final final objective to optimize
+
+	raise NotImplemented
 
 
 def REINFORCE_rw2go( neural_net, memory_buffer, optimizer ):

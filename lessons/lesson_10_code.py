@@ -24,12 +24,25 @@ def A2C( actor_net, critic_net, memory_buffer, actor_optimizer, critic_optimizer
 	
 	#TODO: implement the update rule for the critic (value function)
 	for _ in range(10):
+		# Shuffle the memory buffer
 		np.random.shuffle( memory_buffer )
+		#TODO: extract the information from the buffer
+		# Tape for the critic
 		with tf.GradientTape() as critic_tape:
+			#TODO: Compute the target and the MSE between the current prediction
+			# and the expected advantage 
+			#TODO: Perform the actual gradient-descent process
 			raise NotImplementedError
 
 	#TODO: implement the update rule for the actor (policy function)
+	#TODO: extract the information from the buffer for the policy update
+	# Tape for the actor
 	with tf.GradientTape() as actor_tape:
+		#TODO: compute the log-prob of the current trajectory and 
+		# the objective function, notice that:
+		# the REINFORCE objective is the sum of the logprob (i.e., the probability of the trajectory)
+		# multiplied by advantage
+		#TODO: compute the final objective to optimize, is the average between all the considered trajectories
 		raise NotImplementedError
 	
 
