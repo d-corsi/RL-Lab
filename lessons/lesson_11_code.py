@@ -31,7 +31,7 @@ class OverrideReward( gymnasium.wrappers.NormalizeReward ):
 def main(): 
 	print( "\n***************************************************" )
 	print( "*  Welcome to the eleventh lesson of the RL-Lab!  *" )
-	print( "*                 (DRL in Prctice)                *" )
+	print( "*                 (DRL in Practice)               *" )
 	print( "***************************************************\n" )
 
 	_training_steps = 2000
