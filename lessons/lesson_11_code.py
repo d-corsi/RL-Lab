@@ -10,6 +10,8 @@ import gymnasium, collections
 # TODO: implement the following functions as in the previous lessons
 def createDNN( nInputs, nOutputs, nLayer, nNodes, last_activation ): raise NotImplementedError
 def training_loop( env, actor_net, critic_net, updateRule, frequency=10, episodes=100 ): raise NotImplementedError
+def A2C( actor_net, critic_net, memory_buffer, actor_optimizer, critic_optimizer, gamma=0.99, observation_number=None ): raise NotImplementedError
+
 
 # TODO: implement the following class
 class OverrideReward( gymnasium.wrappers.NormalizeReward ):
