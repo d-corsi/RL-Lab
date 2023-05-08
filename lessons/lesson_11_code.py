@@ -45,6 +45,7 @@ def main():
 		max_episode_steps=1000
 	)
 	env = gymnasium.make( "MountainCarMyVersion-v0" )
+	env = OverrideReward(env)
 		
 	# Create the networks and perform the actual training
 	actor_net = createDNN( None, None, nLayer=None, nNodes=None, last_activation=None )
