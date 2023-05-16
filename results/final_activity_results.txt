@@ -1,0 +1,6 @@
+*****************************************************
+*    Welcome to the final activity of the RL-Lab    *
+*                                                   *
+*****************************************************
+
+(* please refer to the slides for the expected result *)

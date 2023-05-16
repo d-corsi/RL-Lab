@@ -18,7 +18,7 @@ Following the link to the code snippets for the lessons:
 - [x] Lesson 9:  Naive Policy Gradient [Code!](lessons/lesson_9_code.py) [Results!](results/lesson_9_results.txt) [Slides!](slides/slides_lesson_9.pdf)
 - [x] Lesson 10: Actor Critic Architecture (A2C) [Code!](lessons/lesson_10_code.py) [Results!](results/lesson_10_results.txt) [Slides!](slides/slides_lesson_10.pdf)
 - [x] Lesson 11: DRL in Practice [Code!](lessons/lesson_11_code.py) [Results!](results/lesson_11_results.txt) [Slides!](slides/slides_lesson_11.pdf)
-- [x] Lesson 12: Final Activity!
+- [x] Lesson 12: Final Activity [Code!](lessons/final_activity_code.py) [Results!](results/final_activity_results.txt) [Slides!](slides/slides_final_activity.pdf)
 
 ## Tutorials
 This repo includes a set of introductory tutorials to help accomplish the exercises. In detail, we provide the following Jupyter notebook that contains the basic instructions for the lab:
